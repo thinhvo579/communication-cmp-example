@@ -1,0 +1,34 @@
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+</style>
+<header>
+  <h1>Users</h1>
+</header>
+<div
+  class="container mt-5 d-flex justify-content-center mx-auto mb-5"
+  style="max-width: 1430px"
+>
+  <div class="card-1 card mr-3">
+    <app-list-user
+      [users]="users"
+      (sendId)="getId($event)"
+      (edit)="edit($event)"
+    ></app-list-user>
+  </div>
+  <div class="card-1 card mr-3 bg-light mb-3">
+    <app-user [user]="user" *ngIf="editForm; else formEdit"></app-user>
+    <ng-template #formEdit>
+      <app-form-user
+        [user]="user"
+        (sendBuffer)="getBuffer($event)"
+      ></app-form-user>
+    </ng-template>
+  </div>
+  <div class="card-1 card mb-3">
+    <app-interact-user
+      [user]="user"
+      (sendId)="recId($event)"
+      (sendUser)="getUser($event)"
+    ></app-interact-user>
+  </div>
+</div>

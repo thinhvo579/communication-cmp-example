@@ -1,0 +1,18 @@
+.item {
+  cursor: pointer;
+}
+
+.item:hover {
+  background-color: gainsboro;
+}
+li {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+button {
+  position: relative;
+  z-index: 100;
+}

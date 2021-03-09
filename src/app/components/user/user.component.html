@@ -1,0 +1,19 @@
+<div *ngIf="user; else noUser">
+  <div class="card-header">{{ user.name }}</div>
+  <div class="card-body">
+    <p class="card-title">Name: {{ user.name }}</p>
+    <p class="card-title">Username: {{ user.username }}</p>
+    <p class="card-title">Email: {{ user.email }}</p>
+    <ul>
+      <li>Street: {{ user.address.street }}</li>
+      <li>City: {{ user.address.city }}</li>
+    </ul>
+    <!-- <p class="card-text">
+      Some quick example text to build on the card title and make up the bulk of
+      the card's content.
+    </p> -->
+  </div>
+</div>
+<ng-template #noUser>
+  <div class="card-body">No user selected.</div>
+</ng-template>

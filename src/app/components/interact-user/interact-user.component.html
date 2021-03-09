@@ -1,0 +1,13 @@
+<div *ngIf="user; else noUser">
+  <div class="card-header">{{ user.name }}</div>
+  <div class="card-body text-dark">
+    <button class="btn btn-success mr-3" (click)="submitUser(user)">
+      Submit
+    </button>
+    <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+  </div>
+</div>
+
+<ng-template #noUser>
+  <p class="card-body">No user selected.</p>
+</ng-template>

@@ -1,0 +1,16 @@
+<ul class="list-group list-group-flush">
+  <ng-container *ngIf="users && users.length; else noUsers">
+    <li
+      class="item list-group-item"
+      *ngFor="let user of users"
+      (click)="sendId.emit(user.id)"
+    >
+      {{ user.name }}
+      <button class="btn btn-primary" (click)="edit.emit(user)">Edit</button>
+    </li>
+    <li class="item list-group-item text-primary">
+      Users left: {{ users.length }}
+    </li>
+  </ng-container>
+  <ng-template #noUsers> <p class="card-body">No user found...</p></ng-template>
+</ul>
